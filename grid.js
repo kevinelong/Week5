@@ -34,7 +34,9 @@ const grid = [
     ['.', '.', '.'],
     ['.', 'O', 'X'],
 ];
+
 grid[1][1] = "X"
+
 for (let r = 0; r < 3; r++) {
     let row = "";
     for (let c = 0; c < 3; c++) {
