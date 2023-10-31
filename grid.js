@@ -29,6 +29,25 @@ for (let r = 0; r < HEIGHT; r++) {
     console.log("R" + r + row)
 }
 
+function getGrid(grid){
+    let output = ""
+    for (let r = 0; r < grid.length; r++) {
+        let row = "";
+        for (let c = 0; c < grid[r].length; c++) {
+            if(c > 0){
+            // if(c != 0){
+                row += ' ';
+            }
+            row += grid[r][c];
+        }
+        output += row + "\n";
+    }
+    return output;
+}
+
+
+//TESTS
+
 const grid = [
     ['X', 'O', '.'],
     ['.', '.', '.'],
@@ -37,12 +56,8 @@ const grid = [
 
 grid[1][1] = "X"
 
-for (let r = 0; r < 3; r++) {
-    let row = "";
-    for (let c = 0; c < 3; c++) {
-        row += ' ' + grid[r][c];
-    }
-    console.log("R" + r + row)
-}
+const result = getGrid(grid);
+const expected = 'X O .\n. X .\n. O X\n';
 
-
+console.log( result );
+console.log( expected === result);
