@@ -3,8 +3,8 @@ function parsePartCode(code){
     //split on both ':' and '-' using REGEX
     // const pieces = code.split(/[:-]+/)
     
-    let replaced = code.replace(":", "-");
-    const pieces = replaced.split("-");
+    // let replaced = code.replace(":", "-");
+    // const pieces = replaced.split("-");
     
     // const pieces = code.replace(":", "-").split("-")
 
@@ -14,6 +14,10 @@ function parsePartCode(code){
     //     code.split("-")[1],
     // ];
 
+    const left = code.split(":");
+    const right = left[1].split("-")
+    const pieces = [left[0],right[0],right[1]];
+     
     return {
         supplierCode: pieces[0],
         productNumber: pieces[1],
