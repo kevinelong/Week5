@@ -1,0 +1,38 @@
+<body>
+    <select id="category" size="3">
+        <option value="drinks">Drinks</option>
+        <option value="entrees">Entrees</option>
+        <option value="desserts">Desserts</option>
+    </select>
+    <select id="choices"></select>
+</body>
+<script>
+    let menu = {
+        drinks: [
+            "Water", "Tea", "Sweet Tea",
+            "Coke", "Dr. Pepper", "Sprite"
+        ],
+        entrees: [
+            "Hamburger w/ Fries",
+            "Grilled Cheese w/ Tater Tots",
+            "Grilled Chicken w/ Veggies",
+            "Chicken Fried Steak w/ Mashed Potatoes",
+            "Fried Shrimp w/ Coleslaw",
+            "Veggie Plate"
+        ],
+        desserts: [
+            "Cheesecake", "Chocolate Cake", "Snickerdoodle Cookie"
+        ]
+    };
+
+    category.onchange = (e) => {
+        let value = e.target.value;
+        let list = menu[value];
+        choices.size = list.length;
+        choices.innerHTML = ""; //remove all options
+        for(let i=0; i < list.length; i++){
+            choices.innerHTML += `<option>${ list[i] }</option>`
+        }
+
+    }
+</script>
