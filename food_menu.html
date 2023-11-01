@@ -1,5 +1,5 @@
 <body>
-    <select id="category" size="3">
+    <select id="category" size="3" style="vertical-align: top;">
         <option value="drinks">Drinks</option>
         <option value="entrees">Entrees</option>
         <option value="desserts">Desserts</option>
@@ -7,6 +7,7 @@
     <select id="choices"></select>
 </body>
 <script>
+    //FROM PAGE 68
     let menu = {
         drinks: [
             "Water", "Tea", "Sweet Tea",
@@ -24,15 +25,14 @@
             "Cheesecake", "Chocolate Cake", "Snickerdoodle Cookie"
         ]
     };
-
     category.onchange = (e) => {
         let value = e.target.value;
-        let list = menu[value];
-        choices.size = list.length;
+        let list = menu[value]; //LOOK UP BY KEY-WORD TO GET ARRAY-LIST
+        let length = list.length;
+        choices.size = length;
         choices.innerHTML = ""; //remove all options
-        for(let i=0; i < list.length; i++){
+        for(let i=0; i < length; i++){
             choices.innerHTML += `<option>${ list[i] }</option>`
         }
-
     }
 </script>
