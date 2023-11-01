@@ -1,0 +1,14 @@
+<body>
+    <select id="color" size="3">
+        <option value="#ff3333">Red</option>
+        <option value="#669966">Green</option>
+        <option value="#3366ff">Blue</option>
+    </select>
+    <h1 id="colorName">Color Name</h1>
+</body>
+<script>
+color.onchange = (event) => {
+    document.body.style.backgroundColor = event.target.value;
+    colorName.innerText = event.target.selectedOptions[0].innerText;
+}
+</script>
